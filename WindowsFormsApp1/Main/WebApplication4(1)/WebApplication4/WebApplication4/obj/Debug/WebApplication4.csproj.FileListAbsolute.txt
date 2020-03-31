@@ -1,0 +1,12 @@
+C:\Documents and Settings\Administrator\桌面\WebApplication4\WebApplication4\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\WebApplication4\WebApplication4\bin\WebApplication4.dll
+C:\Documents and Settings\Administrator\桌面\WebApplication4\WebApplication4\bin\WebApplication4.pdb
+C:\Documents and Settings\Administrator\桌面\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
+C:\Documents and Settings\Administrator\桌面\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\bin\WebApplication4.dll.config
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\bin\WebApplication4.dll
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\bin\WebApplication4.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csprojAssemblyReference.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CoreCompileInputs.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
+E:\数据库查询UI界面\WindowsFormsApp1\Main\WebApplication4(1)\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb

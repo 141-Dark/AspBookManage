@@ -1,0 +1,13 @@
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\bin\Debug\Book.exe.config
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\bin\Debug\Book.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\bin\Debug\Book.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.Properties.Resources.resources
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.ViewBook.resources
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.ViewBorrowing.resources
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.ViewRecommendation.resources
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.csproj.GenerateResource.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.csproj.CoreCompileInputs.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.csprojAssemblyReference.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\Book\obj\Debug\Book.Form1.resources

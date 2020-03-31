@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="曲靖文化.css">
+<link rel="stylesheet" href="../temp/swiper/swiper-4.4.2/dist/css/swiper.min.css">
+
+<!--导入swiper的js包-->
+<script type="text/javascript" src="../temp/swiper/swiper-4.4.2/dist/js/swiper.min.js"></script>
+
+<link rel="stylesheet" type="text/javascript" href="曲靖文化.js">
+<script type="text/javascript" src="../temp/jquary/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+
+</head>
+<body>
+
+<div class="book preserve-3d">
+			<div class="now_page point">
+				<div class="book-page">
+					<p>第三页</p>
+				</div>
+			</div>
+	
+			<div class="now_page point">
+				<div class="book-page">
+					<p>第二页</p>
+				</div>
+			</div>
+			
+			<div class="now_page point">
+				<div class="book-page ">
+					<p>第一页</p>
+				</div>
+			</div>
+			
+			<!--封面-->
+			<div class="point now_page">
+				<div class="book-page first-page">
+					<p>封面</p>
+				</div>
+			</div>
+		</div>
+
+<script>
+$('.now_page').click(function(){
+			if($(this).hasClass('flip-animation-start')){
+				$(this).removeClass('flip-animation-start').addClass('flip-animation-end');
+			}else{
+				$(this).removeClass('flip-animation-end').addClass('flip-animation-start');
+			}
+		});
+</script>
+</body>
+</html>

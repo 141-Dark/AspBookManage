@@ -1,0 +1,388 @@
+/* CSS Document */
+.heard{
+		width: 1500px;
+		height: 40px;
+		background-color: rgb(227,228,229);
+		position: absolute;
+		left: 11px;
+		top: 8px;
+	  }
+	  
+	  .heard_right{
+	height: 40px;
+	background-color: rgb(227,228,229);
+	position: absolute;
+	width: 758px;
+	left: 762px;
+	top: -1px;
+	  }
+	  
+	  .heard_buttom{
+	width: 982px;
+	height: 126px;
+	background-color: rgb(240,243,239);
+	position: absolute;
+	left: 542px;
+	top: 51px;
+	z-index: 0;
+		  }
+	  .heard_right ul{
+		  margin:0px;
+		  padding:10px;
+		  }
+		  
+	  .heard_right ul li{
+		  list-style:none;
+		  display:inline;
+		  margin-left:20px;
+		  border-right:solid rgb(204,204,204) 2px;
+		  }
+	  .in1_buttom_buttom{
+	width: 981px;
+	height: 30px;
+	position: absolute;
+	left: -3px;
+	margin: 0px;
+	top: 94px;
+	  }
+	  .in1_buttom_buttom ul{
+		   margin:0px;
+		  padding:0px;
+		  }
+		  
+	  .in1_buttom_buttom ul li{
+		  margin-left:15px;
+		  display:inline;
+		  list-style:none;
+		  line-height:30px;
+	  }
+	  
+	  .adress{
+		font-size: 24px;
+		text-align:center;
+		line-height:25px;	
+		color: rgb(168,168,169);
+		margin: 3px;
+		position: absolute;
+		width: 60px;
+		height: 30px;
+		padding: 4px;
+		left: 599px;
+		top: -1px;
+	  }
+	  
+	  .tb1{
+		width: 20px;
+		height: 20px;
+		background-color: rgb(255,0,0);
+		border-radius: 100% 100% 100% 0;
+		position: absolute;
+		margin: 10px;
+		left: 564px;
+		top: -1px;
+		transform:rotate(-45deg);
+	  }
+	  
+	 .disc1{
+		width: 5px;
+		height: 5px;
+		background-color: rgb(255,255,255);
+		border-radius: 100% 100% 100% 100%;
+		position: absolute;
+		left: 8px;
+		top: 8px;
+	  }
+	  
+	   .tb2{
+		width: 20px;
+		height: 20px;
+		background-color: rgb(255,0,0);
+		border-radius: 100% 100% 100% 0;
+		position: absolute;
+		margin: 10px;
+		left: 669px;
+		top: -2px;
+		transform: rotate(-45deg);
+	  }
+	  
+	 .disc2{
+		width: 5px;
+		height: 5px;
+		background-color: rgb(255,255,255);
+		border-radius: 100% 100% 100% 100%;
+		position: absolute;
+		left: 8px;
+		top: 8px;
+	  }
+	  .left{
+	height: 605px;
+	width: 340px;
+	background-color: rgb(240,243,239);
+	position: absolute;
+	top: 48px;
+	left: 11px;
+	font-size: 72px;
+	color: rgb(0,51,255);
+	padding: 0px;
+	margin: 0px;
+`
+	  }
+	  .dog{
+		width: 190px;
+		height: 170px;
+		position: absolute;
+		top: 7px;
+		left: 351px;
+	  }
+	  .dog img{
+		  width: 190px;
+		height: 170px;
+		}
+     .adress a{
+	     text-decoration:none;
+		 width:50px;
+		 height:40px;
+		 display:block;
+			 }
+	  .adress a:hover{
+		  background-color:white;
+ 		 color:green;
+	 
+	}
+	
+	.if1{
+		width: 1200px;
+		height: 479px;
+		position: absolute;
+		left: 556px;
+		top: 179px;
+		z-index:2;
+	}
+	
+	.swiper-container{
+		width: 580px;
+		height: 464px;
+		position: absolute;
+		left: 2px;
+		margin:0px;
+		padding:0px;
+	}
+	
+	.swiper-slide{
+		margin:0px;
+		padding:0px;
+	}
+	.swiper-slide img{
+		width: 580px;
+		height: 464px;
+	}
+	.swiper-wrapper{
+	    margin:0px;
+		padding:0px;
+		利用swiper改变时间曲线
+		transition-timing-function:cubic-bezier(0,0.1,1,1);
+	}
+	 .in1{
+		width: 500px;
+		height: 36px;
+		position: absolute;
+		left: 170px;
+		top: 39px;
+		color:rgb(200,200,200);
+		font-size:18px;
+	  }
+	  
+	  .in1_buttom{
+		width: 500px;
+		height: 14px;
+		background-color:color:rgb(102,102,102);
+		position: absolute;
+		left: 171px;
+		top: 80px;
+		font-size: 12px;	
+	  }
+	  
+	  a{
+		 text-decoration:none;
+		  color:rgb(102,102,102);
+	  }
+	 
+	a:hover{
+		  background-color:white;
+		  color:rgb(255,0,0);
+		 }
+	  .p1{
+		position: absolute;
+		left: 631px;
+		top: 41px;
+	  }
+	  .p2{
+		position: absolute;
+		left: 672px;
+		top: 37px;
+		height: 43px;
+	  }
+	  #popM{
+		  width:200px;
+		  height:200px;
+		  background-color:rgb(255,255,255);
+		  position:absolute;
+		  left:610px;
+		  top:45px;
+		  border:solid 2px;
+		  z-index:100;
+	  }
+	   
+	.if1_right1{
+		width: 197px;
+		height: 150px;
+		position: absolute;
+		left: 583px;
+		top: 1px;
+		padding-left:5px;
+	}
+	
+	.if1_right1 a{
+		width: 197px;
+	height: 150px;
+	}
+	
+	.if1_right1 a{
+		width: 197px;
+	height: 150px;
+	}
+	
+	.if1_right1 a{
+		width: 197px;
+	height: 150px;
+	}
+	.if1_right1 a img{
+		width: 197px;
+	height: 150px;
+	}
+	.if1_right2 a img{
+		width: 197px;
+	height: 150px;
+	}
+	.if1_right3 a img{
+		width: 197px;
+	height: 150px;
+	}
+	.if1_right1 a: hover{
+		background-color:rgb(240,243,239);
+	}
+	
+	.if1_right2 a: hover{
+		background-color:rgb(240,243,239);
+	}
+	
+	.if1_right3 a: hover{
+		background-color:rgb(240,243,239);
+	}
+	.if1_right2{
+		width: 197px;
+		height: 150px;
+		position: absolute;
+		left: 586px;
+		top: 152px;
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+	
+	.if1_right3{
+		width: 197px;
+		height: 150px;
+		position: absolute;
+		left: 587px;
+		top: 311px;
+		padding-left: 5px;
+		padding-top: 5px;
+	}	
+	
+	.most_right{
+		width:30px;
+		height:400px;
+		position:fixed;
+		top:300px;
+		right:0px;
+		padding:0px;
+		margin:0px;
+		
+	}
+	.most_right ul{
+		margin:0px;
+		padding:0px;
+	}
+	.most_right ul li{
+		 list-style:none;
+		  padding-top:1px;
+	}
+  .right{
+	height: 467px;
+	width: 186px;
+	position: absolute;
+	left: 1339px;
+	top: 180px;
+	  }
+.jdleft{
+	width: 1041px;
+	height: 464px;
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	left: 90px;
+	top: 130px;
+	  }
+	  
+	  .dog_buttom{
+	width: 185px;
+	height: 464px;
+	background-color: rgb(254,254,254);
+	position: absolute;
+	left: 353px;
+	top: 176px;
+	margin: 0px;
+	padding: 5px;
+	  }
+	  span{
+		  color:rgb(204,204,204);
+	  }
+	  .dog_buttom ul{
+		  margin:0px;
+		  padding:0px;
+	  }
+	  
+	  .dog_buttom ul li{	 
+		  list-style:none;
+		  padding-top:5px;
+	}
+	  .dog_buttom  ul li a{
+		 width:190px;
+		 height:25px;
+	  }
+	   .dog_buttom  ul li img{
+		   width:990px;
+		   height:467px;
+	   }
+	  .dog_buttom  ul li:hover{
+		  background-color:rgb(153,153,153);
+	  }
+	  .dog_buttom ul li a:hover{
+		   background-color:rgb(153,153,153);
+		  color:rgb(255,0,0);
+	  }
+	 
+	 .dog_buttom ul li div{
+		 position:absolute;
+		 display:none;
+		 left:190px;
+		 top:0px;
+		 width:985px;
+		 height:468px;
+		 z-index:4;
+		 background-color:rgb(254,254,254);
+	 }
+	 
+	 .dog_buttom ul li:hover div{
+		 display:block;
+	 }

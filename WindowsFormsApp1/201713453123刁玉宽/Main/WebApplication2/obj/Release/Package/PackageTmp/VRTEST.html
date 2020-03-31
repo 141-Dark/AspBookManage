@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--必须引入-->
+    <meta charset="UTF-8" name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+    <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=55cf5e45f2abc367b9bbd3adfe74a2cd"></script>
+    <style type="text/css">
+        #container {
+            width: 100%;
+            height: 100%;
+            border: dashed black;
+        }
+
+        #d1 {
+            background-color:darkgray;
+            border: 1px dashed;
+            width: 250px;
+            height: 200px;
+        }
+        #image {
+            width:200px;
+            height:120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+        /*
+        1、设置图层的缩放级别
+        2、指定定位的初始位置
+        3、
+         */
+        var map = new AMap.Map('container', {
+            zoom: 20,//地图缩放级别
+            center: [102.85229126379015, 24.837689818311127],//获取云南民族大学位置
+            viewMode: '3D',//使用3D视图
+            layers: [
+                new AMap.TileLayer.Satellite(),//卫星视角图层
+                new AMap.TileLayer.RoadNet()//城市道路布局图层（含有道路名称）
+            ]
+        });
+
+        /*
+        1、创建信息弹窗
+        2、打开信息窗体
+        3、绑定click事件
+         */
+        var infowindow = new AMap.InfoWindow({
+            isCustom: true,
+            //最好实例化一个窗口
+            content:'<div id="d1"><table><tr><td>位置：</td><td>云南民族大学图书馆</td></tr> <tr><td>描述：</td><td>没有任何描述哦！</td></tr></table><img src="Image/BackgroundPhoto/2.jpg" id="image"><br/><a href ="#">查看详细信息</a></div>',//网页放到div中
+            //content: newWindow(title, content.join("<br/>")),
+            offset: new AMap.Pixel(30, -30)
+        });
+
+        //定义点击事件
+        var onClick = function (e) {
+            infowindow.open(map, e.target.getPosition());
+        }
+
+        //指定标记的点（需要将指定的点添加到地图中）
+        var mark = new AMap.Marker({
+            position: [102.85229126379015, 24.837689818311127]
+        })
+        map.add(mark);
+
+        //绑定点击事件
+        mark.on('click', onClick);
+
+        //实例化窗口
+        var window = '云南民族大学图书馆', content = [];
+        content.push("<img src='F:\\数据库查询UI界面\\WindowsFormsApp1\\201713453123刁玉宽\\Main\\WebApplication2\\Image\\BackgroundPhoto\\2.jpg'>地址：云南民族大学雨花校区");
+        content.push("<a href='infoWindow.html'>查看更多信息</a>");
+
+        //构建窗体
+        function newWindow(window, content) {
+            var info = document.createElement("div");
+            info.className = "firstdiv";
+
+        }
+    </script>
+</body>
+
+</html>

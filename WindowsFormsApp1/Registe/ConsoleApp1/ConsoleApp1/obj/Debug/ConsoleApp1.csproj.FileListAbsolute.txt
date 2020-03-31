@@ -1,0 +1,7 @@
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Registe\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

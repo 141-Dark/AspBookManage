@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SHAREBOOKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="AName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ASex" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="PhoneNumber" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Pwd" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="BookName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Press" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IBSN" Type="char" MaxLength="20" />
+    <Property Name="Type" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Scraps" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="BookShelf">
+    <Key>
+      <PropertyRef Name="ShelfID" />
+    </Key>
+    <Property Name="ShelfID" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Plies" Type="int" Nullable="false" />
+    <Property Name="Capacity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BorrowBooks">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="UID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="DateLine" Type="int" Nullable="false" />
+    <Property Name="Sign" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Buy">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="BookName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="Press" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="School" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Pwd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sign" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recommend">
+    <Key>
+      <PropertyRef Name="Record" />
+    </Key>
+    <Property Name="Record" Type="int" Nullable="false" />
+    <Property Name="UID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="BookName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Press" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Times" Type="int" Nullable="false" />
+    <Property Name="Sign" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReturnBook">
+    <Key>
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="UID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Sign" Type="char" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="Scrap">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="ShelfID" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="AID" Type="char" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="ShelfID" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Plies" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="pwd" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_bookinfo">
+    <Key>
+      <PropertyRef Name="bookcode" />
+    </Key>
+    <Property Name="bookcode" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="bookname" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="autor" Type="varchar" MaxLength="50" />
+    <Property Name="translator" Type="varchar" MaxLength="50" />
+    <Property Name="pubname" Type="varchar" MaxLength="100" />
+    <Property Name="price" Type="money" />
+    <Property Name="page" Type="int" />
+    <Property Name="bcase" Type="varchar" MaxLength="50" />
+    <Property Name="storage" Type="bigint" />
+    <Property Name="inTime" Type="smalldatetime" />
+    <Property Name="oper" Type="varchar" MaxLength="30" />
+    <Property Name="borrownum" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_borrowandback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="readid" Type="int" />
+    <Property Name="bookcode" Type="varchar" MaxLength="30" />
+    <Property Name="borrowTime" Type="smalldatetime" />
+    <Property Name="ygbacktime" Type="smalldatetime" />
+    <Property Name="sjbachtime" Type="nchar" MaxLength="10" />
+    <Property Name="borrowoper" Type="varchar" MaxLength="30" />
+    <Property Name="backoper" Type="varchar" MaxLength="30" />
+    <Property Name="isback" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“SHAREBOOK.dbo.tb_commend”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="tb_commend">
+          <Property Name="bookname" Type="varchar" MaxLength="50" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="money" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“SHAREBOOK.dbo.tb_purview”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="tb_purview">
+          <Property Name="id" Type="varchar" MaxLength="50" />
+          <Property Name="sysset" Type="bit" />
+          <Property Name="readset" Type="bit" />
+          <Property Name="bookset" Type="bit" />
+          <Property Name="borrowback" Type="bit" />
+          <Property Name="sysquery" Type="bit" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“SHAREBOOK.dbo.tb_reader”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="tb_reader">
+          <Property Name="id" Type="varchar" MaxLength="30" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="sex" Type="char" MaxLength="4" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="birthday" Type="smalldatetime" />
+          <Property Name="paperType" Type="varchar" MaxLength="20" />
+          <Property Name="paperNum" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="20" />
+          <Property Name="creatDate" Type="smalldatetime" />
+          <Property Name="oper" Type="varchar" MaxLength="50" />
+          <Property Name="remark" Type="text" />
+          <Property Name="borrownum" Type="int" />
+          <Property Name="occupation" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“SHAREBOOK.dbo.view_AdminPurview”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_AdminPurview">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="sysset" Type="bit" />
+    <Property Name="readset" Type="bit" />
+    <Property Name="bookset" Type="bit" />
+    <Property Name="borrowback" Type="bit" />
+    <Property Name="sysquery" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“SHAREBOOK.dbo.view_BookBRInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_BookBRInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="readid" Type="int" />
+    <Property Name="bookcode" Type="varchar" MaxLength="30" />
+    <Property Name="bookname" Type="varchar" MaxLength="50" />
+    <Property Name="pubname" Type="varchar" MaxLength="100" />
+    <Property Name="price" Type="money" />
+    <Property Name="bcase" Type="varchar" MaxLength="50" />
+    <Property Name="borrowTime" Type="smalldatetime" />
+    <Property Name="ygbacktime" Type="smalldatetime" />
+    <Property Name="isback" Type="bit" />
+    <Property Name="Expr1" Type="varchar" MaxLength="30" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BorrowBooks_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BorrowBooks" Type="Self.BorrowBooks" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="BorrowBooks">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BorrowBooks_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BorrowBooks" Type="Self.BorrowBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="BorrowBooks">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Buy_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Buy">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommend_User">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Recommend" Type="Self.Recommend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="Recommend">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReturnBook_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="ReturnBook" Type="Self.ReturnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="ReturnBook">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReturnBook_User">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="ReturnBook" Type="Self.ReturnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ReturnBook">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_BookShelf">
+    <End Role="BookShelf" Type="Self.BookShelf" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookShelf">
+        <PropertyRef Name="ShelfID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="ShelfID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_BookShelf">
+    <End Role="BookShelf" Type="Self.BookShelf" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookShelf">
+        <PropertyRef Name="ShelfID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="ShelfID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="getRcordePerpage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="telName" Type="varchar" Mode="In" />
+    <Parameter Name="strGetFileds" Type="varchar" Mode="In" />
+    <Parameter Name="fldName" Type="varchar" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="pageIndex" Type="int" Mode="In" />
+    <Parameter Name="doCount" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="int" Mode="In" />
+    <Parameter Name="strWhere" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Pro_Add_BuyAndBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BookID" Type="char" Mode="In" />
+    <Parameter Name="BookName" Type="varchar" Mode="In" />
+    <Parameter Name="Press" Type="varchar" Mode="In" />
+    <Parameter Name="Author" Type="varchar" Mode="In" />
+    <Parameter Name="ISBN" Type="char" Mode="In" />
+    <Parameter Name="Type" Type="char" Mode="In" />
+    <Parameter Name="AID" Type="char" Mode="In" />
+    <Parameter Name="Price" Type="money" Mode="In" />
+    <Parameter Name="Count" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pro_DeletedBorrowRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UID" Type="char" Mode="In" />
+    <Parameter Name="BookID" Type="char" Mode="In" />
+    <Parameter Name="Date" Type="date" Mode="In" />
+    <Parameter Name="Sign" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ViewBook_SQl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="SHAREBOOKModelStoreContainer">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookShelf" EntityType="Self.BookShelf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BorrowBooks" EntityType="Self.BorrowBooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Buy" EntityType="Self.Buy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recommend" EntityType="Self.Recommend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReturnBook" EntityType="Self.ReturnBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Scrap" EntityType="Self.Scrap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_admin" EntityType="Self.tb_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_bookinfo" EntityType="Self.tb_bookinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_borrowandback" EntityType="Self.tb_borrowandback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_AdminPurview" EntityType="Self.view_AdminPurview" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_AdminPurview].[id] AS [id], 
+    [view_AdminPurview].[name] AS [name], 
+    [view_AdminPurview].[sysset] AS [sysset], 
+    [view_AdminPurview].[readset] AS [readset], 
+    [view_AdminPurview].[bookset] AS [bookset], 
+    [view_AdminPurview].[borrowback] AS [borrowback], 
+    [view_AdminPurview].[sysquery] AS [sysquery]
+    FROM [dbo].[view_AdminPurview] AS [view_AdminPurview]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_BookBRInfo" EntityType="Self.view_BookBRInfo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_BookBRInfo].[id] AS [id], 
+    [view_BookBRInfo].[readid] AS [readid], 
+    [view_BookBRInfo].[bookcode] AS [bookcode], 
+    [view_BookBRInfo].[bookname] AS [bookname], 
+    [view_BookBRInfo].[pubname] AS [pubname], 
+    [view_BookBRInfo].[price] AS [price], 
+    [view_BookBRInfo].[bcase] AS [bcase], 
+    [view_BookBRInfo].[borrowTime] AS [borrowTime], 
+    [view_BookBRInfo].[ygbacktime] AS [ygbacktime], 
+    [view_BookBRInfo].[isback] AS [isback], 
+    [view_BookBRInfo].[Expr1] AS [Expr1], 
+    [view_BookBRInfo].[name] AS [name]
+    FROM [dbo].[view_BookBRInfo] AS [view_BookBRInfo]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BorrowBooks_Book" Association="Self.FK_BorrowBooks_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="BorrowBooks" EntitySet="BorrowBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BorrowBooks_Customer" Association="Self.FK_BorrowBooks_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="BorrowBooks" EntitySet="BorrowBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Buy_Administrator" Association="Self.FK_Buy_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="Buy" EntitySet="Buy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommend_User" Association="Self.FK_Recommend_User">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Recommend" EntitySet="Recommend" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReturnBook_Book" Association="Self.FK_ReturnBook_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="ReturnBook" EntitySet="ReturnBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReturnBook_User" Association="Self.FK_ReturnBook_User">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ReturnBook" EntitySet="ReturnBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_Administrator" Association="Self.FK_Scrap_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_Book" Association="Self.FK_Scrap_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_BookShelf" Association="Self.FK_Scrap_BookShelf">
+      <End Role="BookShelf" EntitySet="BookShelf" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Book" Association="Self.FK_Store_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_BookShelf" Association="Self.FK_Store_BookShelf">
+      <End Role="BookShelf" EntitySet="BookShelf" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

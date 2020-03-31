@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8183144-36BB-4969-9AE8-C5C39E05FBF5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2</RootNamespace>
+    <AssemblyName>WebApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Activation.aspx" />
+    <Content Include="AddBook.aspx" />
+    <Content Include="AddTeacher.aspx" />
+    <Content Include="Administrator\Main.aspx" />
+    <Content Include="Administrator\Worker.aspx" />
+    <Content Include="BookIformation.aspx" />
+    <Content Include="BulkImport.aspx" />
+    <Content Include="ComAndRep.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ImagePost.aspx" />
+    <Content Include="Image\192609.jpg" />
+    <Content Include="Image\217437.jpg" />
+    <Content Include="Image\249328.jpg" />
+    <Content Include="Image\321300.jpg" />
+    <Content Include="Image\book1.jpg" />
+    <Content Include="Image\book4.jpg" />
+    <Content Include="Image\book3.jpg" />
+    <Content Include="Image\book2.jpg" />
+    <Content Include="Image\download-page-blue.gif" />
+    <Content Include="Image\touxiang1.JPG" />
+    <Content Include="Image\qq.png" />
+    <Content Include="Image\weibo.png" />
+    <Content Include="Image\weixin.png" />
+    <Content Include="Image\xiaoxi.png" />
+    <Content Include="image_test.aspx" />
+    <Content Include="Manage.aspx" />
+    <Content Include="Tribune.aspx" />
+    <Content Include="User\DoAll.aspx" />
+    <Content Include="User\Iframe_Content\View_Book\Book_Store.aspx" />
+    <Content Include="User\Iframe_Content\View_Book\Gift_Store.aspx" />
+    <Content Include="User\Iframe_Content\View_Tribune\MyMessage.aspx" />
+    <Content Include="User\Iframe_Content\View_Tribune\Tribune.aspx" />
+    <Content Include="User\MainOfAfter.aspx" />
+    <Content Include="User\MainView.aspx" />
+    <Content Include="User\User_HomePage.aspx" />
+    <Content Include="User\User_Login.aspx" />
+    <Content Include="User\User_MoreExperience.aspx" />
+    <Content Include="User\User_Register.aspx" />
+    <Content Include="User\View_School\SchoolFellowes.aspx" />
+    <Content Include="User\View_School\VR_Map.aspx" />
+    <Content Include="Views\index.asp" />
+    <Content Include="VRTEST.html" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="webtest.aspx" />
+    <Content Include="excel\test2.xlsx" />
+    <Content Include="excel\testrwo.xlsx" />
+    <Content Include="期末作业\fonts\iconfont.svg" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\demo.css" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\demo_fontclass.html" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\demo_symbol.html" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\demo_unicode.html" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.css" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.js" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.svg" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\index.html" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.eslintrc.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\010-default.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\020-navigation.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\030-pagination.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\040-pagination-dynamic.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\050-pagination-progress.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\060-pagination-fraction.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\070-pagination-custom.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\080-scrollbar.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\090-vertical.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\100-space-between.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\110-slides-per-view.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\120-slides-per-view-auto.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\130-centered.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\140-centered-auto.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\150-freemode.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\160-scroll-container.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\170-slides-per-column.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\180-nested.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\190-grab-cursor.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\200-infinite-loop.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\210-infinite-loop-with-slides-per-group.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\220-effect-fade.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\230-effect-cube.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\240-effect-coverflow.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\250-effect-flip.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\260-keyboard-control.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\270-mousewheel-control.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\280-autoplay.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\290-dynamic-slides.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\300-thumbs-gallery.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\310-thumbs-gallery-loop.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\320-multiple-swipers.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\330-hash-navigation.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\340-history.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\350-rtl.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\360-parallax.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\370-lazy-load-images.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\380-responsive-breakpoints.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\390-autoheight.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\400-zoom.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\410-virtual-slides.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\420-custom-plugin.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\demos\430-slideable-menu.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\css\swiper.css" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\css\swiper.min.css" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\js\swiper.esm.bundle.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\js\swiper.esm.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\js\swiper.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\js\swiper.min.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\gulpfile.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\package.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\playground\index.html" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\scripts\banner.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\scripts\build-config.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\scripts\build-js.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\scripts\build-less.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\scripts\gulpfile.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\a11y\a11y.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\autoplay\autoplay.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\controller\controller.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\breakpoints\getBreakpoint.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\breakpoints\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\breakpoints\setBreakpoint.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\check-overflow\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\classes\addClasses.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\classes\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\classes\removeClasses.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\core-class.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\defaults.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\onClick.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\onResize.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\onTouchEnd.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\onTouchMove.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\events\onTouchStart.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\grab-cursor\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\grab-cursor\setGrabCursor.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\grab-cursor\unsetGrabCursor.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\images\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\images\loadImage.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\images\preloadImages.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\loop\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\loop\loopCreate.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\loop\loopDestroy.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\loop\loopFix.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\addSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\appendSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\prependSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\removeAllSlides.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\manipulation\removeSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideNext.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slidePrev.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideReset.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideTo.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideToClickedSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideToClosest.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\slide\slideToLoop.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\transition\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\transition\setTransition.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\transition\transitionEnd.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\transition\transitionStart.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\translate\getTranslate.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\translate\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\translate\maxTranslate.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\translate\minTranslate.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\translate\setTranslate.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\index.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateActiveIndex.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateAutoHeight.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateClickedSlide.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateProgress.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateSize.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateSlides.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateSlidesClasses.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateSlidesOffset.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\update\updateSlidesProgress.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-coverflow\effect-coverflow.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-cube\effect-cube.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-fade\effect-fade.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-flip\effect-flip.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\hash-navigation\hash-navigation.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\history\history.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\keyboard\keyboard.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\lazy\lazy.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\mousewheel\mousewheel.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\navigation\navigation.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\pagination\pagination.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\parallax\parallax.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\scrollbar\scrollbar.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\thumbs\thumbs.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\virtual\virtual.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\zoom\zoom.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\browser\browser.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\device\device.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\observer\observer.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\resize\resize.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\support\support.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\swiper.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\browser.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\class.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\device.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\dom.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\support.js" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\utils\utils.js" />
+    <Content Include="期末作业\video\城市风光.mp4" />
+    <Content Include="期末作业\video\期末1.mp4" />
+    <Content Include="期末作业\video\炫酷.mp4" />
+    <Content Include="期末作业\主页.css" />
+    <Content Include="期末作业\图片\1.JPG" />
+    <Content Include="期末作业\图片\10.JPG" />
+    <Content Include="期末作业\图片\11.JPG" />
+    <Content Include="期末作业\图片\12.JPG" />
+    <Content Include="期末作业\图片\13.JPG" />
+    <Content Include="期末作业\图片\14.JPG" />
+    <Content Include="期末作业\图片\15.JPG" />
+    <Content Include="期末作业\图片\16.JPG" />
+    <Content Include="期末作业\图片\17.JPG" />
+    <Content Include="期末作业\图片\18.JPG" />
+    <Content Include="期末作业\图片\19.JPG" />
+    <Content Include="期末作业\图片\2.JPG" />
+    <Content Include="期末作业\图片\20.JPG" />
+    <Content Include="期末作业\图片\3.JPG" />
+    <Content Include="期末作业\图片\3.png" />
+    <Content Include="期末作业\图片\4.JPG" />
+    <Content Include="期末作业\图片\5.JPG" />
+    <Content Include="期末作业\图片\6.JPG" />
+    <Content Include="期末作业\图片\7.JPG" />
+    <Content Include="期末作业\图片\8.JPG" />
+    <Content Include="期末作业\图片\9.JPG" />
+    <Content Include="期末作业\图片\IMG_0144.JPG" />
+    <Content Include="期末作业\图片\IMG_2661.JPG" />
+    <Content Include="期末作业\图片\九龙瀑布.jpg" />
+    <Content Include="期末作业\图片\体育场.JPG" />
+    <Content Include="期末作业\图片\地理位置.jpg" />
+    <Content Include="期末作业\图片\城市背景.jpg" />
+    <Content Include="期末作业\图片\夜景.JPG" />
+    <Content Include="期末作业\图片\大理石雕塑.JPG" />
+    <Content Include="期末作业\图片\宣威火腿.png" />
+    <Content Include="期末作业\图片\富源.jpeg" />
+    <Content Include="期末作业\图片\师宗.jpg" />
+    <Content Include="期末作业\图片\曲靖.jpg" />
+    <Content Include="期末作业\图片\曲靖一中.jpg" />
+    <Content Include="期末作业\图片\曲靖二中.jpeg" />
+    <Content Include="期末作业\图片\曲靖体育场.JPG" />
+    <Content Include="期末作业\图片\民中.png" />
+    <Content Include="期末作业\图片\民中1.png" />
+    <Content Include="期末作业\图片\民中2.JPG" />
+    <Content Include="期末作业\图片\民中5.JPG" />
+    <Content Include="期末作业\图片\民中6.JPG" />
+    <Content Include="期末作业\图片\民中7.jpg" />
+    <Content Include="期末作业\图片\民中8.JPG" />
+    <Content Include="期末作业\图片\民中9.JPG" />
+    <Content Include="期末作业\图片\民中四.JPG" />
+    <Content Include="期末作业\图片\民中标志.png" />
+    <Content Include="期末作业\图片\沾益.jpg" />
+    <Content Include="期末作业\图片\沾益辣子鸡.jpg" />
+    <Content Include="期末作业\图片\珠江源大剧院.JPG" />
+    <Content Include="期末作业\图片\罗平1.jpg" />
+    <Content Include="期末作业\图片\罗平2.jpg" />
+    <Content Include="期末作业\图片\罗平3.jpg" />
+    <Content Include="期末作业\图片\罗平五色花米饭.jpg" />
+    <Content Include="期末作业\图片\蒸饵丝.png" />
+    <Content Include="期末作业\图片\酸菜猪脚.jpg" />
+    <Content Include="期末作业\图片\陆良.jpg" />
+    <Content Include="期末作业\图片\龙潭公园.png" />
+    <Content Include="期末作业\期末作业主页.html" />
+    <Content Include="期末作业\网站\文化.css" />
+    <Content Include="期末作业\网站\曲靖位置.html" />
+    <Content Include="期末作业\网站\曲靖名校.css" />
+    <Content Include="期末作业\网站\曲靖名校.html" />
+    <Content Include="期末作业\网站\曲靖文化.css" />
+    <Content Include="期末作业\网站\曲靖文化.html" />
+    <Content Include="期末作业\网站\曲靖文化.js" />
+    <Content Include="期末作业\网站\曲靖美食.html" />
+    <Content Include="期末作业\网站\曲靖风光.html" />
+    <Content Include="期末作业\网站\民族大学.html" />
+    <Content Include="期末作业\背景音乐\Thomas Prime - Sky High.mp3" />
+    <Content Include="期末作业\背景音乐\Valentin - A Little Story.mp3" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="ManageUser\Student.aspx" />
+    <Content Include="ManageUser\Teacher.aspx" />
+    <Content Include="ManageUser\UserBrBook.aspx" />
+    <Content Include="ManageUser\UserReBook.aspx" />
+    <Content Include="ManageUser\UserRecommend.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="期末作业\.project" />
+    <Content Include="期末作业\fonts\iconfont.eot" />
+    <Content Include="期末作业\fonts\iconfont.ttf" />
+    <Content Include="期末作业\fonts\iconfont.woff" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.eot" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.ttf" />
+    <Content Include="期末作业\temp\font_933289_mmcyb0of0q9\iconfont.woff" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1.zip" />
+    <Content Include="期末作业\temp\jquary\jquery-ui-1.12.1\package.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2.zip" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.editorconfig" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.eslintignore" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.github\lock.yml" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.github\stale.yml" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.gitignore" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.npmignore" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\.travis.yml" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\bower.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\CHANGELOG.md" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\component.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\composer.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\CONTRIBUTING.md" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\dist\js\swiper.min.js.map" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\LICENSE" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\package-lock.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\package.json" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\README.md" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\a11y\a11y.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\controller\controller.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\core\core.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-coverflow\effect-coverflow.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-cube\effect-cube.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-fade\effect-fade.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\effect-flip\effect-flip.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\lazy\lazy.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\navigation\navigation.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\pagination\pagination.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\scrollbar\scrollbar.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\thumbs\thumbs.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\components\zoom\zoom.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\less\mixins.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\modules\resize\resize.less" />
+    <Content Include="期末作业\temp\swiper\swiper-4.4.2\src\swiper.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activation.aspx.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activation.aspx.designer.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddTeacher.aspx.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTeacher.aspx.designer.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Worker.aspx.cs">
+      <DependentUpon>Worker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Worker.aspx.designer.cs">
+      <DependentUpon>Worker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
+    <Compile Include="BookIformation.aspx.cs">
+      <DependentUpon>BookIformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookIformation.aspx.designer.cs">
+      <DependentUpon>BookIformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BulkImport.aspx.cs">
+      <DependentUpon>BulkImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BulkImport.aspx.designer.cs">
+      <DependentUpon>BulkImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComAndRep.aspx.cs">
+      <DependentUpon>ComAndRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComAndRep.aspx.designer.cs">
+      <DependentUpon>ComAndRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\DataBase.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePost.aspx.cs">
+      <DependentUpon>ImagePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImagePost.aspx.designer.cs">
+      <DependentUpon>ImagePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image\DefaultController.cs" />
+    <Compile Include="image_test.aspx.cs">
+      <DependentUpon>image_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="image_test.aspx.designer.cs">
+      <DependentUpon>image_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser\Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser\Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser\Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser\Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser\UserBrBook.aspx.cs">
+      <DependentUpon>UserBrBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser\UserBrBook.aspx.designer.cs">
+      <DependentUpon>UserBrBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser\UserReBook.aspx.cs">
+      <DependentUpon>UserReBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser\UserReBook.aspx.designer.cs">
+      <DependentUpon>UserReBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser\UserRecommend.aspx.cs">
+      <DependentUpon>UserRecommend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser\UserRecommend.aspx.designer.cs">
+      <DependentUpon>UserRecommend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Tribune.aspx.cs">
+      <DependentUpon>Tribune.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tribune.aspx.designer.cs">
+      <DependentUpon>Tribune.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\DoAll.aspx.cs">
+      <DependentUpon>DoAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\DoAll.aspx.designer.cs">
+      <DependentUpon>DoAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Book\Book_Store.aspx.cs">
+      <DependentUpon>Book_Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Book\Book_Store.aspx.designer.cs">
+      <DependentUpon>Book_Store.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Book\Gift_Store.aspx.cs">
+      <DependentUpon>Gift_Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Book\Gift_Store.aspx.designer.cs">
+      <DependentUpon>Gift_Store.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Tribune\MyMessage.aspx.cs">
+      <DependentUpon>MyMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Tribune\MyMessage.aspx.designer.cs">
+      <DependentUpon>MyMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Tribune\Tribune.aspx.cs">
+      <DependentUpon>Tribune.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Iframe_Content\View_Tribune\Tribune.aspx.designer.cs">
+      <DependentUpon>Tribune.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MainOfAfter.aspx.cs">
+      <DependentUpon>MainOfAfter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MainOfAfter.aspx.designer.cs">
+      <DependentUpon>MainOfAfter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MainView.aspx.cs">
+      <DependentUpon>MainView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MainView.aspx.designer.cs">
+      <DependentUpon>MainView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_HomePage.aspx.cs">
+      <DependentUpon>User_HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_HomePage.aspx.designer.cs">
+      <DependentUpon>User_HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Login.aspx.cs">
+      <DependentUpon>User_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Login.aspx.designer.cs">
+      <DependentUpon>User_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_MoreExperience.aspx.cs">
+      <DependentUpon>User_MoreExperience.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_MoreExperience.aspx.designer.cs">
+      <DependentUpon>User_MoreExperience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Register.aspx.cs">
+      <DependentUpon>User_Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Register.aspx.designer.cs">
+      <DependentUpon>User_Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\View_School\SchoolFellowes.aspx.cs">
+      <DependentUpon>SchoolFellowes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\View_School\SchoolFellowes.aspx.designer.cs">
+      <DependentUpon>SchoolFellowes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\View_School\VR_Map.aspx.cs">
+      <DependentUpon>VR_Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\View_School\VR_Map.aspx.designer.cs">
+      <DependentUpon>VR_Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webtest.aspx.cs">
+      <DependentUpon>webtest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webtest.aspx.designer.cs">
+      <DependentUpon>webtest.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AddUser\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="ManageUser\NewFolder1\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="User\Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61835</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61835/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,195 @@
+/* CSS Document */
+a{color:#999;text-decoration: none;}
+a:hover{ color:rgb(204,204,204)}
+input,textarea{outline: none;}
+ @font-face {
+	font-family: 'freshskin';
+	src:url(fonts/iconfont.ttf);
+}  
+
+ .main{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	
+}
+
+.main video{
+	min-width:1280px;
+	width:100%;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.main header{
+	width:100%;
+	height:40px;
+	background: #333;
+	z-index: 10;
+	position: absolute;
+	opacity:0.4;
+}
+#d{
+	width:100%;
+	height:50px;
+	position:absolute;
+	margin-top:40px;
+	top :100x;
+	background:rgb(51,51,51);
+	font-family: "freshskin";
+	z-index:10;	
+	opacity:0.4;
+	}
+#y{
+	width:100%;
+	height:300px;
+	position:absolute;
+	margin-top:350px;
+	margin-left:700px;
+	color:rgb(88,75,222);
+	font-family: "freshskin";
+	font-size:180px;
+	z-index:10;	
+	opacity:0.4;
+	}
+#k{
+	width:100%;
+	height:350px;
+	position:absolute;
+	margin-top:350px;
+	margin-left:900px;
+	color:rgb(88,75,222);
+	font-family: "freshskin";
+	font-size:180px;
+	z-index:10;	
+	opacity:0.4;
+	}
+#k1{
+	width:100%;
+	height:350px;
+	position:absolute;
+	margin-top:350px;
+	margin-left:1100px;
+	color:rgb(88,75,222);
+	font-family: "freshskin";
+	font-size:180px;
+	z-index:10;	
+	opacity:0.4;
+	}
+.main header .div1{
+	width:1030px;
+	height:40px;
+	margin:0 auto;
+}
+
+.main header .right{
+	margin-top: 10px;
+	float: right;
+	font-family: "freshskin";
+	opacity:0.5;
+}
+
+
+.main .tp{
+	width:570px;
+	height:248px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	text-align: center;
+	opacity:0.7;
+}
+.main .tp p{
+	margin-top: 280px;
+	color:rgb(149,8,8);
+	font-size:24px;
+}
+.main .tp ul{
+	position: absolute;
+	color:#000;
+}
+.main .tp ul li{
+	width:180px;
+	height:56px;
+	border-radius: 28px;
+	background: #fff;
+	text-align: left;
+}
+.main .tp ul .one{
+	line-height: 56px;
+	position: absolute;
+	left: -1920px;
+	top:40px;
+	opacity: 0;
+	transition:all 0.7s ease-in 0s;
+}
+.main .tp ul .two{
+	line-height: 56px;
+	position: absolute;
+	left: 1920px;
+	top:40px;
+	opacity: 0;
+	transition:all 0.7s ease-in 0s;
+}
+.main .tp ul .three{
+	line-height: 56px;
+	position: absolute;
+	left: -1920px;
+	top:100px;
+	opacity: 0;
+	transition:all 1s ease-in 0s;
+}
+.main .tp ul .four{
+	line-height: 56px;
+	position: absolute;
+	left: 1920px;
+	top:100px;
+	opacity: 0;
+	transition:all 1s ease-in 0s;
+}
+body:hover .main .tp ul .one{
+	position: absolute;
+	left:100px;
+	top:40px;
+	opacity:0.8;
+}
+body:hover .main .tp ul .two{
+	position: absolute;
+	left:300px;
+	top:40px;
+	opacity:0.8;
+}
+body:hover .main .tp ul .three{
+	position: absolute;
+	left:100px;
+	top:100px;
+	opacity:0.8;
+}
+body:hover .main .tp ul .four{
+	position: absolute;
+	left:300px;
+	top:100px;
+	opacity:0.8;
+}
+.main .tp ul .one span,.main .tp ul .two span,.main .tp ul .three span,.main .tp ul .four span{
+	float: left;
+	width:40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 20px;
+	margin:8px 10px 0 10px;
+	box-shadow: 0 0 0 1px #000 inset;
+	
+	font-family: "freshskin";
+	font-weight: bold;
+	color:#000;
+}
+.main .tp ul .one:hover span,.main .tp ul .two:hover span,.main .tp ul .three:hover span,.main .tp ul .four:hover span{
+	box-shadow: 0 0 0 20px #000 inset;
+	color:#fff;
+} 

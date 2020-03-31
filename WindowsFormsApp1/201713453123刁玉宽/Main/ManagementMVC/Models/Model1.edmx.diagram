@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d4bcad3623a46c3b5d3cd6bd7eb34d5" Name="Diagram1">
+        <EntityTypeShape EntityType="SHAREBOOKModel.Administrator" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Book" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.BookShelf" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.BorrowBooks" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Buy" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Customer" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Recommend" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.ReturnBook" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Scrap" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.Store" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.tb_admin" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.tb_bookinfo" Width="1.5" PointX="8.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.tb_borrowandback" Width="1.5" PointX="5.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.view_AdminPurview" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHAREBOOKModel.view_BookBRInfo" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Buy_Administrator" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Scrap_Administrator" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_BorrowBooks_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_ReturnBook_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Scrap_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Store_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Scrap_BookShelf" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Store_BookShelf" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_BorrowBooks_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_Recommend_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SHAREBOOKModel.FK_ReturnBook_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

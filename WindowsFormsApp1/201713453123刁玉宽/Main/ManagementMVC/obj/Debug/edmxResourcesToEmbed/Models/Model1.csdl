@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SHAREBOOKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ASex" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Buy" Relationship="Self.FK_Buy_Administrator" FromRole="Administrator" ToRole="Buy" />
+    <NavigationProperty Name="Scrap" Relationship="Self.FK_Scrap_Administrator" FromRole="Administrator" ToRole="Scrap" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Press" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IBSN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Scraps" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="BorrowBooks" Relationship="Self.FK_BorrowBooks_Book" FromRole="Book" ToRole="BorrowBooks" />
+    <NavigationProperty Name="ReturnBook" Relationship="Self.FK_ReturnBook_Book" FromRole="Book" ToRole="ReturnBook" />
+    <NavigationProperty Name="Scrap" Relationship="Self.FK_Scrap_Book" FromRole="Book" ToRole="Scrap" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_Store_Book" FromRole="Book" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="BookShelf">
+    <Key>
+      <PropertyRef Name="ShelfID" />
+    </Key>
+    <Property Name="ShelfID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Plies" Type="Int32" Nullable="false" />
+    <Property Name="Capacity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Scrap" Relationship="Self.FK_Scrap_BookShelf" FromRole="BookShelf" ToRole="Scrap" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_Store_BookShelf" FromRole="BookShelf" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="BorrowBooks">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="UID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateLine" Type="Int32" Nullable="false" />
+    <Property Name="Sign" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_BorrowBooks_Book" FromRole="BorrowBooks" ToRole="Book" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_BorrowBooks_Customer" FromRole="BorrowBooks" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Buy">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Press" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_Buy_Administrator" FromRole="Buy" ToRole="Administrator" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sex" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="School" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sign" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BorrowBooks" Relationship="Self.FK_BorrowBooks_Customer" FromRole="Customer" ToRole="BorrowBooks" />
+    <NavigationProperty Name="Recommend" Relationship="Self.FK_Recommend_User" FromRole="Customer" ToRole="Recommend" />
+    <NavigationProperty Name="ReturnBook" Relationship="Self.FK_ReturnBook_User" FromRole="Customer" ToRole="ReturnBook" />
+  </EntityType>
+  <EntityType Name="Recommend">
+    <Key>
+      <PropertyRef Name="Record" />
+    </Key>
+    <Property Name="Record" Type="Int32" Nullable="false" />
+    <Property Name="UID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Press" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Times" Type="Int32" Nullable="false" />
+    <Property Name="Sign" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Recommend_User" FromRole="Recommend" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="ReturnBook">
+    <Key>
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="UID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Sign" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_ReturnBook_Book" FromRole="ReturnBook" ToRole="Book" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_ReturnBook_User" FromRole="ReturnBook" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Scrap">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ShelfID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AID" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_Scrap_Administrator" FromRole="Scrap" ToRole="Administrator" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_Scrap_Book" FromRole="Scrap" ToRole="Book" />
+    <NavigationProperty Name="BookShelf" Relationship="Self.FK_Scrap_BookShelf" FromRole="Scrap" ToRole="BookShelf" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ShelfID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Plies" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_Store_Book" FromRole="Store" ToRole="Book" />
+    <NavigationProperty Name="BookShelf" Relationship="Self.FK_Store_BookShelf" FromRole="Store" ToRole="BookShelf" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_bookinfo">
+    <Key>
+      <PropertyRef Name="bookcode" />
+    </Key>
+    <Property Name="bookcode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="autor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="translator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pubname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="page" Type="Int32" />
+    <Property Name="bcase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="storage" Type="Int64" />
+    <Property Name="inTime" Type="DateTime" Precision="0" />
+    <Property Name="oper" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="borrownum" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tb_borrowandback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="readid" Type="Int32" />
+    <Property Name="bookcode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="borrowTime" Type="DateTime" Precision="0" />
+    <Property Name="ygbacktime" Type="DateTime" Precision="0" />
+    <Property Name="sjbachtime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="borrowoper" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="backoper" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="isback" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="view_AdminPurview">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sysset" Type="Boolean" />
+    <Property Name="readset" Type="Boolean" />
+    <Property Name="bookset" Type="Boolean" />
+    <Property Name="borrowback" Type="Boolean" />
+    <Property Name="sysquery" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="view_BookBRInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="readid" Type="Int32" />
+    <Property Name="bookcode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pubname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="bcase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="borrowTime" Type="DateTime" Precision="0" />
+    <Property Name="ygbacktime" Type="DateTime" Precision="0" />
+    <Property Name="isback" Type="Boolean" />
+    <Property Name="Expr1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Buy_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Buy">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BorrowBooks_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BorrowBooks" Type="Self.BorrowBooks" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="BorrowBooks">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReturnBook_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="ReturnBook" Type="Self.ReturnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="ReturnBook">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scrap_BookShelf">
+    <End Role="BookShelf" Type="Self.BookShelf" Multiplicity="1" />
+    <End Role="Scrap" Type="Self.Scrap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookShelf">
+        <PropertyRef Name="ShelfID" />
+      </Principal>
+      <Dependent Role="Scrap">
+        <PropertyRef Name="ShelfID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_BookShelf">
+    <End Role="BookShelf" Type="Self.BookShelf" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookShelf">
+        <PropertyRef Name="ShelfID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="ShelfID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BorrowBooks_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BorrowBooks" Type="Self.BorrowBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="BorrowBooks">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommend_User">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Recommend" Type="Self.Recommend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="Recommend">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReturnBook_User">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="ReturnBook" Type="Self.ReturnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="ReturnBook">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SHAREBOOKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="Book" EntityType="Self.Book" />
+    <EntitySet Name="BookShelf" EntityType="Self.BookShelf" />
+    <EntitySet Name="BorrowBooks" EntityType="Self.BorrowBooks" />
+    <EntitySet Name="Buy" EntityType="Self.Buy" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+    <EntitySet Name="Recommend" EntityType="Self.Recommend" />
+    <EntitySet Name="ReturnBook" EntityType="Self.ReturnBook" />
+    <EntitySet Name="Scrap" EntityType="Self.Scrap" />
+    <EntitySet Name="Store" EntityType="Self.Store" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tb_admin" EntityType="Self.tb_admin" />
+    <EntitySet Name="tb_bookinfo" EntityType="Self.tb_bookinfo" />
+    <EntitySet Name="tb_borrowandback" EntityType="Self.tb_borrowandback" />
+    <EntitySet Name="view_AdminPurview" EntityType="Self.view_AdminPurview" />
+    <EntitySet Name="view_BookBRInfo" EntityType="Self.view_BookBRInfo" />
+    <AssociationSet Name="FK_Buy_Administrator" Association="Self.FK_Buy_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="Buy" EntitySet="Buy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_Administrator" Association="Self.FK_Scrap_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BorrowBooks_Book" Association="Self.FK_BorrowBooks_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="BorrowBooks" EntitySet="BorrowBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReturnBook_Book" Association="Self.FK_ReturnBook_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="ReturnBook" EntitySet="ReturnBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_Book" Association="Self.FK_Scrap_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Book" Association="Self.FK_Store_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scrap_BookShelf" Association="Self.FK_Scrap_BookShelf">
+      <End Role="BookShelf" EntitySet="BookShelf" />
+      <End Role="Scrap" EntitySet="Scrap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_BookShelf" Association="Self.FK_Store_BookShelf">
+      <End Role="BookShelf" EntitySet="BookShelf" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BorrowBooks_Customer" Association="Self.FK_BorrowBooks_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="BorrowBooks" EntitySet="BorrowBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommend_User" Association="Self.FK_Recommend_User">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Recommend" EntitySet="Recommend" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReturnBook_User" Association="Self.FK_ReturnBook_User">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ReturnBook" EntitySet="ReturnBook" />
+    </AssociationSet>
+    <FunctionImport Name="getRcordePerpage">
+      <Parameter Name="telName" Mode="In" Type="String" />
+      <Parameter Name="strGetFileds" Mode="In" Type="String" />
+      <Parameter Name="fldName" Mode="In" Type="String" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="pageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="doCount" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="Int32" />
+      <Parameter Name="strWhere" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Pro_Add_BuyAndBook">
+      <Parameter Name="BookID" Mode="In" Type="String" />
+      <Parameter Name="BookName" Mode="In" Type="String" />
+      <Parameter Name="Press" Mode="In" Type="String" />
+      <Parameter Name="Author" Mode="In" Type="String" />
+      <Parameter Name="ISBN" Mode="In" Type="String" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="AID" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="Count" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pro_DeletedBorrowRecord">
+      <Parameter Name="UID" Mode="In" Type="String" />
+      <Parameter Name="BookID" Mode="In" Type="String" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Sign" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SHAREBOOKModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SHAREBOOKModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="ViewBook_SQl" ReturnType="Collection(SHAREBOOKModel.ViewBook_SQl_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewBook_SQl_Result">
+    <Property Type="Int64" Name="Column1" Nullable="true" />
+    <Property Type="String" Name="BookName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Press" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Author" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IBSN" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="4" />
+  </ComplexType>
+</Schema>

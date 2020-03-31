@@ -1,0 +1,81 @@
+
+
+
+.book{
+		height: 150px;
+		width: 40%;
+		background: #FFF;
+		position: absolute;
+		left:300px;
+		top:50px;
+		transform: rotateX(30deg);
+		-webkit-transform: rotateX(30deg);
+		-ms-transform: rotateX(30deg);
+		-o-transform: rotateX(30deg);
+	}
+	/*每页的公共样式*/
+	.book-page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height:150px;
+		border: 1px solid #1976D2;
+		text-align: center;
+		background-color: #fff;
+	}
+	.book-page p{
+		font-size: 1.2rem;
+		margin-top: 32px;
+		color: #ff6300;
+		backface-visibility:hidden;
+		-webkit-backface-visibility:hidden;
+	}
+	/*首页样式*/
+	.first-page{
+		background-color: #1976D2;
+	}
+	
+	/*动画部分*/
+	/*I'm the home page动画*/
+	.flip-animation-start {
+		animation: flipBook1 3s forwards;
+		-moz-animation: flipBook1 3s forwards; /* Firefox */
+		-webkit-animation: flipBook1 3s forwards; /* Safari and Chrome */
+		-o-animation: flipBook1 3s forwards; /* Opera */
+	}
+	.flip-animation-end {
+		animation: flipBook2 3s forwards;
+		-moz-animation: flipBook2 3s forwards; /* Firefox */
+		-webkit-animation: flipBook2 3s forwards; /* Safari and Chrome */
+		-o-animation: flipBook2 3s forwards; /* Opera */
+	}
+	@keyframes flipBook1 {
+		0% {
+			-webkit-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			-o-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+		}
+		100% {
+			-webkit-transform: rotateY(-160deg);
+			-ms-transform: rotateY(-160deg);
+			-o-transform: rotateY(-160deg);
+			transform: rotateY(-160deg);
+		}
+	}
+    /*关闭书页*/
+	@keyframes flipBook2 {
+		0% {
+			-webkit-transform: rotateY(-160deg);
+			-ms-transform: rotateY(-160deg);
+			-o-transform: rotateY(-160deg);
+			transform: rotateY(-160deg);
+		}
+		100% {
+			-webkit-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			-o-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+		}
+	}

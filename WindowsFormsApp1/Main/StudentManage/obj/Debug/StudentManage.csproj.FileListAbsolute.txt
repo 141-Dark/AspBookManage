@@ -1,0 +1,9 @@
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\bin\Debug\StudentManage.exe.config
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\bin\Debug\StudentManage.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\bin\Debug\StudentManage.pdb
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.csprojAssemblyReference.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.Properties.Resources.resources
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.csproj.GenerateResource.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.csproj.CoreCompileInputs.cache
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.exe
+E:\数据库查询UI界面\WindowsFormsApp1\Main\StudentManage\obj\Debug\StudentManage.pdb
